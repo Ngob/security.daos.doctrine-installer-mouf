@@ -1,0 +1,39 @@
+{
+    "name": "mouf/security.daos.doctrine-installer",
+    "description": "This package contains the installer for a basic user dao",
+    "keywords": ["mouf", "userdao", "user management", "installer"],
+    "homepage": "https://github.com/Ngob/security.daos.doctrine-installer",
+    "type": "mouf-library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Benoit Ngo",
+            "email": "b.ngo@thecodingmachine.com",
+            "homepage": "http://mouf-php.com"
+        }
+    ],
+    "require": {
+    	"php": ">=5.5.0",
+      "mouf/security.daos.doctrine": "~0.1",
+    },
+    "autoload": {
+        "psr-4": {
+            "Security\\Daos\\Doctrine\\Installer\\": "src/"
+        }
+    },
+	"extra": {
+		"mouf": {
+			"install": [{
+				"type": "url",
+				"url": "userentityinstaller/",
+				"scope": "global",
+				"description": "Install the basic userentity"
+			}],
+			"require-admin": [
+				"src/InstallAdmin.php"
+			]
+		}
+	},
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
