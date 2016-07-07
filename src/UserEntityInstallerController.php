@@ -57,7 +57,7 @@ class UserEntityInstallerController extends Controller  {
 
     const __GENERATED_CLASS_NAME__ = "User";
 
-    const __ABSTRACT_CLASS_NAME__ = self::__NAMESPACE__MAINPACKAGE__."\\AbstractUserEntity";
+    const __ABSTRACT_CLASS_NAME__ = "\\".self::__NAMESPACE__MAINPACKAGE__."\\AbstractUserEntity";
 
     const __USERINTERFACE_FULLNAME__ = "Mouf\\Security\\UserService\\UserDaoInterface";
 
