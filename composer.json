@@ -14,7 +14,7 @@
     ],
     "require": {
     	"php": ">=5.5.0",
-      "mouf/security.daos.doctrine": "~0.1",
+      "thecodingmachine/security.daos.doctrine": "~0.1",
     },
     "autoload": {
         "psr-4": {
