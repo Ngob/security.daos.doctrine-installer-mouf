@@ -1,5 +1,5 @@
 <?php
-namespace Security\Daos\Doctrine\Installer;
+namespace Security\Daos\Doctrine\Installer\Mouf;
 
 use Mouf\Actions\InstallUtils;
 use Mouf\MoufManager;
@@ -15,8 +15,7 @@ use Mouf\MoufUtils;
  *
  * @Component
  */
-//TODO ADD support of namespace in UserEntity.php.tpl
-class UserEntityInstallerController extends Controller  {
+class UserInstallerController extends Controller  {
     public $selfedit;
 
     /**
