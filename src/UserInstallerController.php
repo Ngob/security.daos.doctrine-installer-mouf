@@ -321,8 +321,10 @@ class UserInstallerController extends Controller  {
     	}**/
     	if (!chmod($filename, 0664))
     		throw new UserDaoException("Cannot Chmod ".$filename);
-    	$this->createMyInstanceView($choosen_namespace, $selfedit);
+    	return $this->createMyInstanceView($choosen_namespace, $selfedit);
     }
+    
+    
     /**
      *
      *
@@ -390,4 +392,33 @@ class UserInstallerController extends Controller  {
     	}
     }
 
+    /**
+     * check if the schema is already updated
+     *
+     * @Action
+     * @Logged
+     * @param string $selfedit If true, the name of the component must be a component from the Mouf framework itself (internal use only)
+     * @param string $namespace
+     */
+    public function updateDatabaseSchemaView($choosen_namespace, $selfedit = "false") {
+    	$this->selfedit = $selfedit;
+    	if ($selfedit == "true") {
+    		$this->moufManager = MoufManager::getMoufManager();
+    	} else {
+    		$this->moufManager = MoufManager::getMoufManagerHiddenInstance();
+    	}
+    	$moufManager = $this->moufManager;
+    	
+    	$namespace = html_entity_decode($choosen_namespace);
+    	$namespace = preg_replace('/\s+/', '', $namespace);
+    	//$entityManager = $moufManager->getInstance(self::__ENTITYMANAGER_NAME__);
+    	$entityManager = new \Mouf\InstanceProxy(self::__ENTITYMANAGER_NAME__);
+    	$sqls = $entityManager->getSchemaUpdateSQL();
+    	//getSchemaUpdateSQL
+    	// updateSchema
+
+    	//$sqls = $tool->getCreateSchemaSql($entityManager->getClassMetadata($namespace));
+    	var_dump($sqls);
+    }
+    
 }

@@ -37,10 +37,10 @@
 </form>
 <div style="clear:both"></div>
 <h1>If you do not want to create the default user class click below</h1>
-<form action="createMyInstanceView">
+<form action="updateDatabaseSchemaView">
     <input type="hidden" name="selfedit" value="<?php echo $this->selfedit ?>" />
     <input type="hidden" name="choosen_namespace" value="<?php echo $this->namespace ?>" />
-    <button style="clear:both; display:block; float:left; margin-right: 10px;" data-submit="">Skip</button>
+    <button class="btn" data-submit="">Skip</button>
 </form>
 
 <script>
